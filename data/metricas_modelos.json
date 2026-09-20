@@ -1,0 +1,139 @@
+{
+  "metodologia": {
+    "target": "taxa líquida de emprego do mês seguinte (saldo/estoque)",
+    "features": "somente informações disponíveis até o mês-base",
+    "split": "treino até dezembro/2025; teste de janeiro a junho/2026",
+    "classificacao": "tercis dos alvos calculados somente no treino",
+    "recomendacao": "60% probabilidade do modelo de setor + 40% probabilidade do modelo de UF"
+  },
+  "setor": {
+    "accuracy": 0.5256410256410257,
+    "report": {
+      "Alta": {
+        "precision": 0.5952380952380952,
+        "recall": 0.6578947368421053,
+        "f1-score": 0.625,
+        "support": 38.0
+      },
+      "Baixa": {
+        "precision": 0.6122448979591837,
+        "recall": 0.4918032786885246,
+        "f1-score": 0.5454545454545454,
+        "support": 61.0
+      },
+      "Média": {
+        "precision": 0.4153846153846154,
+        "recall": 0.47368421052631576,
+        "f1-score": 0.4426229508196721,
+        "support": 57.0
+      },
+      "accuracy": 0.5256410256410257,
+      "macro avg": {
+        "precision": 0.5409558695272981,
+        "recall": 0.5411274086856486,
+        "f1-score": 0.5376924987580726,
+        "support": 156.0
+      },
+      "weighted avg": {
+        "precision": 0.5361724966120571,
+        "recall": 0.5256410256410257,
+        "f1-score": 0.5272579196759525,
+        "support": 156.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        30,
+        28,
+        3
+      ],
+      [
+        16,
+        27,
+        14
+      ],
+      [
+        3,
+        10,
+        25
+      ]
+    ],
+    "labels": [
+      "Baixa",
+      "Média",
+      "Alta"
+    ],
+    "train_rows": 1705,
+    "test_rows": 156,
+    "test_period": "jan/2026 a jun/2026",
+    "thresholds": [
+      0.002385357574274836,
+      0.005962989223212706
+    ]
+  },
+  "uf": {
+    "accuracy": 0.4950980392156863,
+    "report": {
+      "Alta": {
+        "precision": 0.41379310344827586,
+        "recall": 0.6666666666666666,
+        "f1-score": 0.5106382978723404,
+        "support": 36.0
+      },
+      "Baixa": {
+        "precision": 0.8103448275862069,
+        "recall": 0.41964285714285715,
+        "f1-score": 0.5529411764705883,
+        "support": 112.0
+      },
+      "Média": {
+        "precision": 0.3409090909090909,
+        "recall": 0.5357142857142857,
+        "f1-score": 0.4166666666666667,
+        "support": 56.0
+      },
+      "accuracy": 0.4950980392156863,
+      "macro avg": {
+        "precision": 0.5216823406478578,
+        "recall": 0.5406746031746031,
+        "f1-score": 0.4934153803365318,
+        "support": 204.0
+      },
+      "weighted avg": {
+        "precision": 0.611500399532854,
+        "recall": 0.4950980392156863,
+        "f1-score": 0.5080672736345269,
+        "support": 204.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        47,
+        50,
+        15
+      ],
+      [
+        7,
+        30,
+        19
+      ],
+      [
+        4,
+        8,
+        24
+      ]
+    ],
+    "labels": [
+      "Baixa",
+      "Média",
+      "Alta"
+    ],
+    "train_rows": 2154,
+    "test_rows": 204,
+    "test_period": "jan/2026 a jun/2026",
+    "thresholds": [
+      0.00319389011296916,
+      0.006497207297725651
+    ]
+  }
+}
