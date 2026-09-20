@@ -23,7 +23,19 @@ sec_fc=pd.read_csv(DATA/"previsoes_setores_jul2026.csv")
 uf_fc=pd.read_csv(DATA/"previsoes_ufs_jul2026.csv")
 metrics=json.loads((DATA/"metricas_modelos.json").read_text(encoding="utf-8"))
 
-REGION_MAP=pack["region_map"]
+# Mantém compatibilidade com versões antigas do arquivo de modelo, que podem
+# não trazer o mapa de regiões serializado.
+REGION_MAP=pack.get("region_map", {
+    "Rondônia":"Norte", "Acre":"Norte", "Amazonas":"Norte", "Roraima":"Norte",
+    "Pará":"Norte", "Amapá":"Norte", "Tocantins":"Norte",
+    "Maranhão":"Nordeste", "Piauí":"Nordeste", "Ceará":"Nordeste",
+    "Rio Grande do Norte":"Nordeste", "Paraíba":"Nordeste", "Pernambuco":"Nordeste",
+    "Alagoas":"Nordeste", "Sergipe":"Nordeste", "Bahia":"Nordeste",
+    "Minas Gerais":"Sudeste", "Espírito Santo":"Sudeste", "Rio de Janeiro":"Sudeste",
+    "São Paulo":"Sudeste", "Paraná":"Sul", "Santa Catarina":"Sul",
+    "Rio Grande do Sul":"Sul", "Mato Grosso do Sul":"Centro-Oeste",
+    "Mato Grosso":"Centro-Oeste", "Goiás":"Centro-Oeste", "Distrito Federal":"Centro-Oeste",
+})
 st.set_page_config(page_title="EmpregaData",page_icon="📊",layout="wide")
 
 st.title("📊 EmpregaData")
