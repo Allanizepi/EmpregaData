@@ -1,4 +1,4 @@
-# EmpregaData — Projeto Integrador IV - UNIVESP - Ciêcnia de Dados
+# EmpregaData — Projeto Integrador IV - UNIVESP - Ciência de Dados
 Aplicação de análise e classificação da demanda do mercado de trabalho brasileiro usando dados do CAGED.
 
 ## Melhorias desta versão
